@@ -1,4 +1,15 @@
 Rails.application.routes.draw do
+  get 'search_record/putRecord'
+
+  get 'search_record/getRecord'
+
+  get 'visitor/home'
+
+  root to: 'visitor#home'
+
+  devise_for :users
+  devise_for :models
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

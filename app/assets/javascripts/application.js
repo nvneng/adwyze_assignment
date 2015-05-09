@@ -12,5 +12,19 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require turbolinks
 //= require_tree .
+
+$(document).ready(function(){
+    $('.search-button').attr('disabled',true);
+    $('#search_string').keyup(function(){
+        if($(this).val().match(/^\s*$/) )
+            $('.search-button').attr('disabled',true);
+        else
+            $('.search-button').attr('disabled', false);
+    })
+
+    $('#pagecount').hide();
+    $('#cpage').hide();
+});
+
+

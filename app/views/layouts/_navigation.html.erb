@@ -1,0 +1,42 @@
+<div class="navbar navbar-inverse navbar-fixed-top">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand hidden-xs" href="#">Assignment</a>
+      <a class="navbar-brand visible-xs" href="#">C</a>
+      <% if user_signed_in? %>
+          <form class="navbar-form pull-left" action="http://localhost:3000/search_record/putRecord" role="search" method="get" onsubmit="return validateForm();">
+            <div class="input-group">
+              <input type="text" class="form-control" name = "search_string" id = "search_string" placeholder="Artist Name">
+              <div class="input-group-btn">
+                <button type="submit" class="btn btn-default search-button"><span class="glyphicon glyphicon-search"></span></button>
+              </div>
+            </div>
+          </form>
+
+      <%end%>
+    </div>
+    <div class="navbar-collapse collapse">
+      <ul class="nav navbar-nav navbar-right">
+        <%= render 'layouts/navigation_links' %>
+      </ul>
+    </div>
+    <!--/.navbar-collapse -->
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+

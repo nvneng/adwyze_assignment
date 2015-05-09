@@ -1,0 +1,132 @@
+<%if @is_error %>
+
+<%= @error%>
+
+<% else %>
+<div class="container">
+
+
+
+  <!-- Features Section -->
+  <div class="row">
+
+    <div class="col-md-4 col-sm-6">
+      <div class="panel panel-default">
+        <div class="panel-heading">Artist <%= @artist_name %></div>
+        <div class="panel-body">
+          <a href=<%= @artist_link %> target="_blank">
+
+            <img class="img-responsive img-portfolio img-hover " src=<%= @artist_pic %> alt="">
+
+          </a>
+        </div>
+      </div>
+
+
+
+
+
+    </div>
+
+    <div class="col-md-8 col-sm-6">
+
+    </div>
+
+
+  </div>
+
+<% if @tags %>
+  <ol class="breadcrumb">
+    <% @tags.each do |tag|  %>
+        <li><a href=<%= tag['url'] %> target="_blank" ><%= tag['name'] %> <span class="glyphicon glyphicon-paperclip" aria-hidden="true"></span></a></li>
+    <% end %>
+
+  </ol>
+<% end %>
+
+
+  <% if @albums_info %>
+  <div class="container">
+    <h2>Album</h2>
+    <div class="table-responsive scroll_wrap">
+
+
+      <table class="table">
+        <tbody>
+
+        <% @albums_info.each do |album| %>
+            <tr>
+              <td>
+                <a href=<%= album['url']%> target="_blank">
+                  <% if(album['image'][3]['#text'] == "")%>
+                      <img class="img-responsive img-portfolio img-hover album-image pull-left" src="http://i61.tinypic.com/2mwdtsk.png" alt="">
+                  <% else %>
+                      <img class="img-responsive img-portfolio img-hover album-image pull-left" src=<%= album['image'][3]['#text'] %> alt="">
+                  <% end %>
+
+                </a>
+              </td>
+              <td ><%= album['name'] %></td>
+            </tr>
+        <% end %>
+        </tbody>
+      </table>
+
+    </div>
+  </div>
+  <% end  %>
+<%if @similar_artists %>
+  <div class="row">
+    <div class="col-md-12">
+      <h1>Similar Artist</h1>
+
+      <div class="well-none">
+
+        <div id="albumScroller" class="carousel slide">
+          <!-- Carousel items -->
+
+            <div class="carousel-inner">
+              <div class="item active" >
+                <div class="row">
+
+                <% @similar_artists.each_with_index  do |artist , index|%>
+
+
+                <div class="col-sm-3 col-xs-6">
+                  <% if(artist['image'][3]['#text'] == "")%>
+                      <a href=<%= artist['url'] %> target="_blank" class="thumbnail"><img  class="img-responsive backup_picture" src="http://i61.tinypic.com/2mwdtsk.png" > <%= artist['name'] %> </a>
+                    <% else %>
+                      <a href=<%= artist['url'] %> target="_blank" class="thumbnail"><img  class="img-responsive backup_picture" src=<%= artist['image'][3]['#text'] %>  > <%= artist['name'] %></a>
+
+                  <% end %>
+                </div>
+
+            <% end %>
+            </div>
+            </div>
+
+          </div>
+
+        </div>
+        <!--/myCarousel-->
+      </div>
+    </div>
+    <!--/well-->
+  </div>
+
+<% end %>
+
+
+
+
+  <!-- Footer -->
+  <footer>
+    <div class="row">
+      <div class="col-lg-12">
+        <p>Copyright &copy; AdWyze assignment</p>
+      </div>
+    </div>
+  </footer>
+</div>
+<!-- Page Content -->
+<% end %>
