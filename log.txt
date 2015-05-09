@@ -1,0 +1,102 @@
+2015-05-09T14:37:27.675094+00:00 heroku[web.1]: State changed from starting to up
+2015-05-09T14:41:44.358052+00:00 heroku[web.1]: State changed from up to starting
+2015-05-09T14:41:46.020925+00:00 heroku[web.1]: Stopping all processes with SIGTERM
+2015-05-09T14:41:46.401329+00:00 app[web.1]: 	/app/vendor/ruby-2.2.0/lib/ruby/2.2.0/webrick/server.rb:174:in `block in start'
+2015-05-09T14:41:46.401330+00:00 app[web.1]: 	/app/vendor/ruby-2.2.0/lib/ruby/2.2.0/webrick/server.rb:32:in `start'
+2015-05-09T14:41:46.401326+00:00 app[web.1]: 	/app/vendor/ruby-2.2.0/lib/ruby/2.2.0/webrick/server.rb:174:in `select'
+2015-05-09T14:41:46.401319+00:00 app[web.1]: [2015-05-09 14:41:46] FATAL SignalException: SIGTERM
+2015-05-09T14:41:46.401335+00:00 app[web.1]: 	/app/vendor/bundle/ruby/2.2.0/gems/rack-1.6.1/lib/rack/server.rb:286:in `start'
+2015-05-09T14:41:46.401336+00:00 app[web.1]: 	/app/vendor/bundle/ruby/2.2.0/gems/railties-4.2.1/lib/rails/commands/server.rb:80:in `start'
+2015-05-09T14:41:46.401340+00:00 app[web.1]: 	/app/vendor/bundle/ruby/2.2.0/gems/railties-4.2.1/lib/rails/commands/commands_tasks.rb:75:in `tap'
+2015-05-09T14:41:46.436937+00:00 app[web.1]: => Rails 4.2.1 application starting in production on http://0.0.0.0:54478
+2015-05-09T14:41:46.401342+00:00 app[web.1]: 	/app/vendor/bundle/ruby/2.2.0/gems/railties-4.2.1/lib/rails/commands/commands_tasks.rb:75:in `server'
+2015-05-09T14:41:46.401344+00:00 app[web.1]: 	/app/vendor/bundle/ruby/2.2.0/gems/railties-4.2.1/lib/rails/commands/commands_tasks.rb:39:in `run_command!'
+2015-05-09T14:41:46.401346+00:00 app[web.1]: 	/app/vendor/bundle/ruby/2.2.0/gems/railties-4.2.1/lib/rails/commands.rb:17:in `<top (required)>'
+2015-05-09T14:41:46.401349+00:00 app[web.1]: 	bin/rails:8:in `require'
+2015-05-09T14:41:46.401351+00:00 app[web.1]: 	bin/rails:8:in `<main>'
+2015-05-09T14:41:46.401421+00:00 app[web.1]: [2015-05-09 14:41:46] INFO  going to shutdown ...
+2015-05-09T14:41:46.401454+00:00 app[web.1]: [2015-05-09 14:41:46] INFO  WEBrick::HTTPServer#start done.
+2015-05-09T14:41:46.436931+00:00 app[web.1]: => Booting WEBrick
+2015-05-09T14:41:46.401332+00:00 app[web.1]: 	/app/vendor/ruby-2.2.0/lib/ruby/2.2.0/webrick/server.rb:162:in `start'
+2015-05-09T14:41:46.401333+00:00 app[web.1]: 	/app/vendor/bundle/ruby/2.2.0/gems/rack-1.6.1/lib/rack/handler/webrick.rb:35:in `run'
+2015-05-09T14:41:46.401338+00:00 app[web.1]: 	/app/vendor/bundle/ruby/2.2.0/gems/railties-4.2.1/lib/rails/commands/commands_tasks.rb:80:in `block in server'
+2015-05-09T14:41:46.436939+00:00 app[web.1]: => Run `rails server -h` for more startup options
+2015-05-09T14:41:46.436940+00:00 app[web.1]: => Ctrl-C to shutdown server
+2015-05-09T14:41:46.436942+00:00 app[web.1]: Exiting
+2015-05-09T14:41:47.116123+00:00 heroku[web.1]: Process exited with status 143
+2015-05-09T14:41:48.193014+00:00 heroku[web.1]: Starting process with command `bundle exec rails s -p 52810`
+2015-05-09T14:41:52.771243+00:00 heroku[web.1]: State changed from starting to up
+2015-05-09T14:41:52.572060+00:00 app[web.1]: [Simple Form] Simple Form is not configured in the application and will use the default values. Use `rails generate simple_form:install` to generate the Simple Form configuration.
+2015-05-09T14:41:52.604691+00:00 app[web.1]: [2015-05-09 14:41:52] INFO  ruby 2.2.0 (2014-12-25) [x86_64-linux]
+2015-05-09T14:41:52.604681+00:00 app[web.1]: [2015-05-09 14:41:52] INFO  WEBrick 1.3.1
+2015-05-09T14:41:52.605107+00:00 app[web.1]: [2015-05-09 14:41:52] INFO  WEBrick::HTTPServer#start: pid=3 port=52810
+2015-05-09T14:43:30.438611+00:00 heroku[router]: at=info method=GET path="/" host=adwyzeassignment.herokuapp.com request_id=38965e15-5cb7-4050-91fc-a2739716282c fwd="106.51.243.239" dyno=web.1 connect=2ms service=118ms status=302 bytes=1009
+2015-05-09T14:43:30.724901+00:00 heroku[router]: at=info method=GET path="/users/sign_in" host=adwyzeassignment.herokuapp.com request_id=7763b6fc-90f9-4e89-8e87-0bcd86a3b6c1 fwd="106.51.243.239" dyno=web.1 connect=0ms service=28ms status=500 bytes=1754
+2015-05-09T14:44:07.543238+00:00 heroku[api]: Starting process with command `bundle exec rake` by nvneng@gmail.com
+2015-05-09T14:44:15.214452+00:00 heroku[run.7252]: Awaiting client
+2015-05-09T14:44:15.251102+00:00 heroku[run.7252]: Starting process with command `bundle exec rake`
+2015-05-09T14:44:15.472845+00:00 heroku[run.7252]: State changed from starting to up
+2015-05-09T14:44:20.022787+00:00 heroku[run.7252]: State changed from up to complete
+2015-05-09T14:44:20.008267+00:00 heroku[run.7252]: Process exited with status 1
+2015-05-09T14:44:30.414093+00:00 heroku[api]: Starting process with command `bundle exec rake db:migrate` by nvneng@gmail.com
+2015-05-09T14:44:36.773133+00:00 heroku[run.7072]: Awaiting client
+2015-05-09T14:44:36.810061+00:00 heroku[run.7072]: Starting process with command `bundle exec rake db:migrate`
+2015-05-09T14:44:37.188633+00:00 heroku[run.7072]: State changed from starting to up
+2015-05-09T14:44:42.479567+00:00 heroku[run.7072]: Process exited with status 0
+2015-05-09T14:44:42.492370+00:00 heroku[run.7072]: State changed from up to 
+complete
+2015-05-09T14:44:50.078186+00:00 heroku[router]: at=info method=GET path="/" host=adwyzeassignment.herokuapp.com request_id=d2fe1f7d-1912-412b-ad13-8faf4fbe33df fwd="106.51.243.239" dyno=web.1 connect=1ms service=14ms status=302 bytes=1009
+2015-05-09T14:44:50.380328+00:00 heroku[router]: at=info method=GET path="/users/sign_in" host=adwyzeassignment.herokuapp.com request_id=65f01346-e97b-4c29-8b4c-f2fe5dab05dd fwd="106.51.243.239" dyno=web.1 connect=1ms service=67ms status=200 bytes=4081
+2015-05-09T14:44:51.077877+00:00 heroku[router]: at=info method=GET path="/assets/application-826b845c35da94058eda47a3865644a42f43db1b1ebb17f3a205ee283f1941a0.css" host=adwyzeassignment.herokuapp.com request_id=a7072df5-4b8e-4498-84b1-2695b64d2866 fwd="106.51.243.239" dyno=web.1 connect=1ms service=407ms status=200 bytes=248592
+2015-05-09T14:44:51.343001+00:00 heroku[router]: at=info method=GET path="/assets/application-e43e2da4a913641bbc123c9e8b61260a1e01f8c9a0fa1ea8e94e5dcc37ec6f46.js" host=adwyzeassignment.herokuapp.com request_id=48148060-76aa-4dd1-9a2a-98f1e362be7c fwd="106.51.243.239" dyno=web.1 connect=1ms service=234ms status=200 bytes=182903
+2015-05-09T14:44:58.624701+00:00 heroku[router]: at=info method=GET path="/users/sign_up" host=adwyzeassignment.herokuapp.com request_id=84f0cb22-4ce5-4ea4-841b-933bc9a63e83 fwd="106.51.243.239" dyno=web.1 connect=1ms service=27ms status=200 bytes=3376
+2015-05-09T14:45:15.004991+00:00 heroku[router]: at=info method=POST path="/users" host=adwyzeassignment.herokuapp.com request_id=38b4480b-16be-46fb-b263-81ca4ef175e5 fwd="106.51.243.239" dyno=web.1 connect=1ms service=261ms status=302 bytes=1147
+2015-05-09T14:45:15.255713+00:00 heroku[router]: at=info method=GET path="/" host=adwyzeassignment.herokuapp.com request_id=4599f877-5bf2-4129-9459-85db9844f2c9 fwd="106.51.243.239" dyno=web.1 connect=1ms service=24ms status=200 bytes=3539
+2015-05-09T14:45:15.731945+00:00 heroku[router]: at=info method=GET path="/assets/bootstrap/glyphicons-halflings-regular-fc969dc1c6ff531abcf368089dcbaf5775133b0626ff56b52301a059fc0f9e1e.woff" host=adwyzeassignment.herokuapp.com request_id=550237c2-5bd2-4458-afdd-2537c94079ad fwd="106.51.243.239" dyno=web.1 connect=1ms service=63ms status=200 bytes=23549
+2015-05-09T14:46:47.648736+00:00 heroku[router]: at=info method=GET path="/" host=adwyzeassignment.herokuapp.com request_id=2611159b-de24-4cd7-9872-77e7d1af590e fwd="106.51.243.239" dyno=web.1 connect=1ms service=15ms status=200 bytes=3150
+2015-05-09T14:46:47.954305+00:00 heroku[router]: at=info method=GET path="/assets/application-826b845c35da94058eda47a3865644a42f43db1b1ebb17f3a205ee283f1941a0.css" host=adwyzeassignment.herokuapp.com request_id=6cf1b0d9-726a-428e-9ee7-db639a6474a6 fwd="106.51.243.239" dyno=web.1 connect=9ms service=7ms status=304 bytes=133
+2015-05-09T14:46:48.375689+00:00 heroku[router]: at=info method=GET path="/assets/application-e43e2da4a913641bbc123c9e8b61260a1e01f8c9a0fa1ea8e94e5dcc37ec6f46.js" host=adwyzeassignment.herokuapp.com request_id=74951c5e-7201-4268-aefa-45103462e3dc fwd="106.51.243.239" dyno=web.1 connect=4ms service=3ms status=304 bytes=133
+2015-05-09T15:02:15.047209+00:00 heroku[api]: Deploy 41a4c03 by nvneng@gmail.com
+2015-05-09T15:02:15.047241+00:00 heroku[api]: Release v9 created by nvneng@gmail.com
+2015-05-09T15:02:15.407142+00:00 heroku[web.1]: State changed from up to starting
+2015-05-09T15:02:17.557200+00:00 heroku[web.1]: Stopping all processes with SIGTERM
+2015-05-09T15:02:18.076053+00:00 app[web.1]: 	/app/vendor/ruby-2.2.0/lib/ruby/2.2.0/webrick/server.rb:32:in `start'
+2015-05-09T15:02:18.076054+00:00 app[web.1]: 	/app/vendor/ruby-2.2.0/lib/ruby/2.2.0/webrick/server.rb:162:in `start'
+2015-05-09T15:02:18.076056+00:00 app[web.1]: 	/app/vendor/bundle/ruby/2.2.0/gems/rack-1.6.1/lib/rack/handler/webrick.rb:35:in `run'
+2015-05-09T15:02:18.076041+00:00 app[web.1]: [2015-05-09 15:02:18] FATAL SignalException: SIGTERM
+2015-05-09T15:02:18.076047+00:00 app[web.1]: 	/app/vendor/ruby-2.2.0/lib/ruby/2.2.0/webrick/server.rb:174:in `select'
+2015-05-09T15:02:18.076052+00:00 app[web.1]: 	/app/vendor/ruby-2.2.0/lib/ruby/2.2.0/webrick/server.rb:174:in `block in start'
+2015-05-09T15:02:18.076058+00:00 app[web.1]: 	/app/vendor/bundle/ruby/2.2.0/gems/rack-1.6.1/lib/rack/server.rb:286:in `start'
+2015-05-09T15:02:18.076059+00:00 app[web.1]: 	/app/vendor/bundle/ruby/2.2.0/gems/railties-4.2.1/lib/rails/commands/server.rb:80:in `start'
+2015-05-09T15:02:18.076062+00:00 app[web.1]: 	/app/vendor/bundle/ruby/2.2.0/gems/railties-4.2.1/lib/rails/commands/commands_tasks.rb:75:in `tap'
+2015-05-09T15:02:18.076064+00:00 app[web.1]: 	/app/vendor/bundle/ruby/2.2.0/gems/railties-4.2.1/lib/rails/commands/commands_tasks.rb:75:in `server'
+2015-05-09T15:02:18.076061+00:00 app[web.1]: 	/app/vendor/bundle/ruby/2.2.0/gems/railties-4.2.1/lib/rails/commands/commands_tasks.rb:80:in `block in server'
+2015-05-09T15:02:18.076066+00:00 app[web.1]: 	/app/vendor/bundle/ruby/2.2.0/gems/railties-4.2.1/lib/rails/commands/commands_tasks.rb:39:in `run_command!'
+2015-05-09T15:02:18.122809+00:00 app[web.1]: => Rails 4.2.1 application starting in production on http://0.0.0.0:52810
+2015-05-09T15:02:18.076067+00:00 app[web.1]: 	/app/vendor/bundle/ruby/2.2.0/gems/railties-4.2.1/lib/rails/commands.rb:17:in `<top (required)>'
+2015-05-09T15:02:18.076069+00:00 app[web.1]: 	bin/rails:8:in `require'
+2015-05-09T15:02:18.076070+00:00 app[web.1]: 	bin/rails:8:in `<main>'
+2015-05-09T15:02:18.076129+00:00 app[web.1]: [2015-05-09 15:02:18] INFO  going to shutdown ...
+2015-05-09T15:02:18.076172+00:00 app[web.1]: [2015-05-09 15:02:18] INFO  WEBrick::HTTPServer#start done.
+2015-05-09T15:02:18.122804+00:00 app[web.1]: => Booting WEBrick
+2015-05-09T15:02:18.122814+00:00 app[web.1]: Exiting
+2015-05-09T15:02:18.122811+00:00 app[web.1]: => Run `rails server -h` for more startup options
+2015-05-09T15:02:18.122812+00:00 app[web.1]: => Ctrl-C to shutdown server
+2015-05-09T15:02:19.034276+00:00 heroku[web.1]: Process exited with status 143
+2015-05-09T15:02:20.863384+00:00 heroku[web.1]: Starting process with command `bundle exec rails s -p 6119`
+2015-05-09T15:02:27.412421+00:00 app[web.1]: [Simple Form] Simple Form is not configured in the application and will use the default values. Use `rails generate simple_form:install` to generate the Simple Form configuration.
+2015-05-09T15:02:27.449598+00:00 app[web.1]: [2015-05-09 15:02:27] INFO  WEBrick 1.3.1
+2015-05-09T15:02:27.449649+00:00 app[web.1]: [2015-05-09 15:02:27] INFO  ruby 2.2.0 (2014-12-25) [x86_64-linux]
+2015-05-09T15:02:27.450396+00:00 app[web.1]: [2015-05-09 15:02:27] INFO  WEBrick::HTTPServer#start: pid=3 port=6119
+2015-05-09T15:02:27.642214+00:00 heroku[web.1]: State changed from starting to up
+2015-05-09T15:03:06.550992+00:00 heroku[router]: at=info method=GET path="/" host=adwyzeassignment.herokuapp.com request_id=2909f79a-06ea-4b6b-83f2-eae464dacb82 fwd="106.51.243.239" dyno=web.1 connect=0ms service=202ms status=200 bytes=3207
+2015-05-09T15:03:07.421541+00:00 heroku[router]: at=info method=GET path="/assets/application-e43e2da4a913641bbc123c9e8b61260a1e01f8c9a0fa1ea8e94e5dcc37ec6f46.js" host=adwyzeassignment.herokuapp.com request_id=61a09157-8c16-4bc6-bede-7aebd579f037 fwd="106.51.243.239" dyno=web.1 connect=1ms service=554ms status=200 bytes=182903
+2015-05-09T15:03:07.344475+00:00 heroku[router]: at=info method=GET path="/assets/application-826b845c35da94058eda47a3865644a42f43db1b1ebb17f3a205ee283f1941a0.css" host=adwyzeassignment.herokuapp.com request_id=2e55a81e-0ab5-4a12-8d7b-ae0143904d85 fwd="106.51.243.239" dyno=web.1 connect=0ms service=17ms status=304 bytes=133
+2015-05-09T15:03:15.219102+00:00 heroku[router]: at=info method=GET path="/search_record/putRecord?utf8=%E2%9C%93&search_string=cher" host=adwyzeassignment.herokuapp.com request_id=3d1abd03-dd62-4aba-8059-7b2520c5f3b1 fwd="106.51.243.239" dyno=web.1 connect=0ms service=20ms status=500 bytes=1754
+2015-05-09T15:04:32.511636+00:00 heroku[router]: at=info method=GET path="/" host=adwyzeassignment.herokuapp.com request_id=61f87e5d-2b70-441c-8134-de0c60d77e1e fwd="106.51.243.239" dyno=web.1 connect=2ms service=33ms status=200 bytes=3207
+2015-05-09T15:04:36.944335+00:00 heroku[router]: at=info method=POST path="/users/sign_out" host=adwyzeassignment.herokuapp.com request_id=619e67ac-4924-4744-964c-e50ccbeaff05 fwd="106.51.243.239" dyno=web.1 connect=0ms service=56ms status=302 bytes=891
+2015-05-09T15:04:37.239720+00:00 heroku[router]: at=info method=GET path="/" host=adwyzeassignment.herokuapp.com request_id=9bd6bcdf-ed90-4904-a238-259f46aa759b fwd="106.51.243.239" dyno=web.1 connect=1ms service=16ms status=302 bytes=1091
+2015-05-09T15:04:37.544913+00:00 heroku[router]: at=info method=GET path="/users/sign_in" host=adwyzeassignment.herokuapp.com request_id=c20721b4-67a0-4b11-9f8f-dcee632033d8 fwd="106.51.243.239" dyno=web.1 connect=0ms service=43ms status=200 bytes=4081
+2015-05-09T15:04:43.879811+00:00 heroku[router]: at=info method=POST path="/users/sign_in" host=adwyzeassignment.herokuapp.com request_id=212ab6ee-cc7b-4efe-9566-e9d28018a19c fwd="106.51.243.239" dyno=web.1 connect=1ms service=144ms status=302 bytes=1003
+2015-05-09T15:04:44.167367+00:00 heroku[router]: at=info method=GET path="/" host=adwyzeassignment.herokuapp.com request_id=d80ae501-6845-4655-bc91-5ad0be2ef50e fwd="106.51.243.239" dyno=web.1 connect=1ms service=18ms status=200 bytes=3558
+2015-05-09T15:04:54.349699+00:00 heroku[router]: at=info method=GET path="/search_record/putRecord?utf8=%E2%9C%93&search_string=h" host=adwyzeassignment.herokuapp.com request_id=9d44064f-e86a-401f-bec5-4042e25a45f0 fwd="106.51.243.239" dyno=web.1 connect=1ms service=20ms status=500 bytes=1754
