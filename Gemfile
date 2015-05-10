@@ -3,11 +3,12 @@ source 'https://rubygems.org'
 gem 'twitter-bootstrap-rails', '~> 3.2.0'
 
 
+gem 'bower-rails'
 
 source 'https://rubygems.org'
 #postgresql gem
 gem 'pg'
-
+gem 'lograge'
 gem 'jquery-ui-rails'
 ruby '2.2.0'
 gem 'rails', '4.2.1'
@@ -33,6 +34,5 @@ group :development do
   gem 'rails_layout'
   gem 'mysql2'
 end
-
-
+\
 gem 'autoprefixer-rails'

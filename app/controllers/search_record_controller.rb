@@ -1,93 +1,134 @@
 require 'net/http'
+require 'json'
+
 
 class SearchRecordController < ApplicationController
   before_action :authenticate_user!
 
-
-
   def putRecord
 
+    @artist_details_json = {}
     val = params[:search_string]
     @is_error = false
     data = getArtistDetails(val)
+    @JSON_ARRAY_LIMIT = 10
     if( data == "something went wrong" or data == "search not found")
-      @is_error = true
-      @error = data
+      @artist_details_json[:error => data]
     else
 
       artist_info = data['artist']
-      validateParsedDetailsAndSet(artist_info , val)
+      validateParsedDetailsAndSet(artist_info , val )
       Srecord.create(:user_id => current_user.id , :search_string => val , :artistimage => @artist_pic ,:artistprofile => @artist_link)
 
     end
-
+    render :json => JSON.generate(@artist_details_json)
   end
 
 
   def getRecord
     #response should be in
-    index = 0
+    cpage = params['cpage'].to_i
+    logger.info params['cpage']
+    logger.info cpage
     @records = Srecord.where(:user_id => current_user.id)
 
+    pageCount = (10 % @records.count)
+    logger.info pageCount
+    logger.info @records.count
+    if(cpage <= pageCount and @records.count > 0)
+      @records = @records.reverse_order!
+      from_index = cpage*10
+      sub_array = @records[from_index , 10]
+
+      history_hash = {'history' => sub_array , 'cpage' => cpage }
+
+
+
+    else
+      if(@records.count <= 0)
+        history_hash =  {'cpage' => 'nothingtodisplay'}
+      end
+      history_hash =  {'cpage' => 'nopageleft'}
+    end
+    render :json => history_hash.to_json
+
   end
 
 
-  def validateParsedDetailsAndSet(artist_info , val)
+  def validateParsedDetailsAndSet(artist_info , val )
 
     begin
-      @artist_name = artist_info['name']
+      @artist_details_json.append_merge!( :name , artist_info['name'])
     rescue StandardError
-      @artist_name = 'ERROR PARSING NAME'
+      @artist_details_json.append_merge!( :name , 'ERROR PARSING NAME')
     end
 
     begin
-      @artist_pic = artist_info['image'][3]['#text']
+      @artist_pic = artist_info['image'][3]['#text'];
+      @artist_details_json.append_merge!(:image , @artist_pic)
     rescue StandardError
-      @artist_pic = ''
+      @artist_details_json.append_merge!(:image , 'backup image')
     end
 
     begin
-      @artist_link = artist_info['url']
+      @artist_link = artist_info['url'];
+      @artist_details_json.append_merge!( :url,artist_info['url'])
     rescue StandardError
-      @artist_link = ''
+      @artist_details_json.append_merge!( :url,'show broken')
     end
 
     begin
-      @similar_artists = artist_info['similar']['artist']
-      if(@similar_artists.kind_of?(Hash))
-        @similar_artists = [@similar_artists]
+      similar_artists = artist_info['similar']['artist']
+      if(similar_artists.kind_of?(Hash))
+        similar_artists = [similar_artists]
       end
-
+      similar_artists.each do |artist|
+        artist.append_merge!('artistimage',artist['image'][3]['#text'])
+        artist.delete('image')
+      end
+    @artist_details_json.append_merge!(:similar_artist,similar_artists)
     rescue StandardError
-      @similar_artists = []
+      @artist_details_json.append_merge!(:similar_artist,[])
     end
 
     begin
-      @tags = artist_info['tags']['tag']
-      if(@tags.kind_of?(Hash))
-        @tags = [@tags]
+      tags = artist_info['tags']['tag']
+      if(tags.kind_of?(Hash))
+        tags = [tags]
       end
+      @artist_details_json.append_merge!( :tags,tags )
+
     rescue StandardError
-      @tags = []
+      @artist_details_json.append_merge!( :tags,[] )
     end
 
-    data = getAlbums(val)
+
     begin
-      @albums_info = data['topalbums']['album']
-      if(@albums_info.kind_of?(Hash))
-        @albums_info = [@albums_info]
+      data = getAlbums(val)
+      albums = []
+      albums_info = data['topalbums']['album']
+      if(albums_info.kind_of?(Hash))
+        albums_info = [albums_info]
       end
+      albums_info.each do |album|
+        album.delete('artist')
+        album.delete('mbid')
+        album.delete('@attr')
+        album.append_merge!('albumimage',album['image'][3]['#text'])
+        album.delete('image')
+      end
+      @artist_details_json.append_merge!('albums',albums_info)
     rescue StandardError
-      @albums_info = []
+      @artist_details_json.append_merge!(:albums,[])
     end
 
   end
+
 
 
   def getAlbums(artist)
 
     url = 'http://ws.audioscrobbler.com/2.0/?method=artist.gettopalbums&artist='+artist+'&api_key='+Rails.application.secrets.last_fm_api_key+'&format=json'
-
     resp = Net::HTTP.get_response(URI.parse(url)) # get_response takes an URI object
     return JSON.parse(resp.body)
 

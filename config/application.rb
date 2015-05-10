@@ -8,6 +8,14 @@ Bundler.require(*Rails.groups)
 
 module AdWyze
   class Application < Rails::Application
+
+    unless Rails.env.test?
+      log_level = String(ENV['LOG_LEVEL'] || "info").upcase
+      config.logger = Logger.new(STDOUT)
+      config.logger.level = Logger.const_get(log_level)
+      config.log_level = log_level
+      config.lograge.enabled = true # see lograge section below...
+    end
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.

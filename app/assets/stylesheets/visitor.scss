@@ -1,3 +1,22 @@
 // Place all the styles related to the visitor controller here.
-// They will automatically be included in application.css.
+// They will automatically be included in application.css.scss.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+#more_button{
+  width: 100%;
+}
+
+.history_artist_image_even
+{
+  max-height: 200px;
+  max-width: 200px;
+}
+
+.ari-holder
+{
+  margin-bottom: 2%;
+}
+
+.history-panel-body
+{
+  max-height: 250px;
+}

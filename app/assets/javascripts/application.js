@@ -15,16 +15,15 @@
 //= require_tree .
 
 $(document).ready(function(){
-    $('.search-button').attr('disabled',true);
-    $('#search_string').keyup(function(){
-        if($(this).val().match(/^\s*$/) )
-            $('.search-button').attr('disabled',true);
-        else
-            $('.search-button').attr('disabled', false);
-    })
 
-    $('#pagecount').hide();
-    $('#cpage').hide();
+    $(".artist-view").hide();
+    $(".error-view").hide();
+    $(".load-view").hide();
+    $(".no-result-view").hide();
+
+
+
+
 });
 
 
