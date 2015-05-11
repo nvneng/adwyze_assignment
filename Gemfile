@@ -2,9 +2,9 @@ source 'https://rubygems.org'
 
 gem 'twitter-bootstrap-rails', '~> 3.2.0'
 
+gem 'rails_12factor', group: :production
 
 gem 'bower-rails'
-
 source 'https://rubygems.org'
 #postgresql gem
 gem 'pg'
@@ -34,5 +34,5 @@ group :development do
   gem 'rails_layout'
   gem 'mysql2'
 end
-\
+
 gem 'autoprefixer-rails'
