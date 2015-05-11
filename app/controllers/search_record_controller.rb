@@ -31,11 +31,13 @@ class SearchRecordController < ApplicationController
     logger.info params['cpage']
     logger.info cpage
     @records = Srecord.where(:user_id => current_user.id)
-
+    if(@records.count > 0)
+      pageCount = (10 % @records.count)
+    else
+      pageCount = -1
+    end
     logger.info pageCount
     logger.info @records.count
-    pageCount = (10 % @records.count)
-
     if(cpage <= pageCount and @records.count > 0)
       @records = @records.reverse_order!
       from_index = cpage*10
