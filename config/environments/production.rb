@@ -1,10 +1,7 @@
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
 
-  config.assets.precompile += %w( angular.js )
-  config.assets.precompile += %w( bootstrap.js )
-  config.assets.precompile += %w( search_record.js )
-  config.assets.precompile += %w( visitor.js )
+
   config.assets.compress = true
   # Code is not reloaded between requests.
   config.cache_classes = true

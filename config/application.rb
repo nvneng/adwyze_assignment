@@ -8,7 +8,7 @@ Bundler.require(*Rails.groups)
 
 module AdWyze
   class Application < Rails::Application
-    config.serve_static_assets = true
+
     unless Rails.env.test?
       log_level = String(ENV['LOG_LEVEL'] || "info").upcase
       config.logger = Logger.new(STDOUT)
