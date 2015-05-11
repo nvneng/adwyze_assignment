@@ -5,11 +5,12 @@ Rails.application.routes.draw do
 
   get 'visitor/home'
 
-  root to: 'visitor#home'
+
 
   devise_for :users
   devise_for :models
 
+  root to: 'visitor#home'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
