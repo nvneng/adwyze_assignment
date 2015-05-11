@@ -38,7 +38,7 @@ class SearchRecordController < ApplicationController
     end
     logger.info pageCount
     logger.info @records.count
-    if(cpage < pageCount and @records.count > 0)
+    if(cpage <= pageCount and @records.count > 0)
       @records = @records.reverse_order!
       from_index = cpage*10
       sub_array = @records[from_index , 10]
